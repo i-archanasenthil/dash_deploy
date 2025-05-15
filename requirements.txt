@@ -5,3 +5,4 @@ seaborn
 dash
 plotly
 gunicorn
+scikit-learn
