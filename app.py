@@ -8,12 +8,12 @@ from sklearn.preprocessing import StandardScaler
 import plotly.graph_objects as go
 
 # Load data
-df = pd.read_csv(r'data\synthetic_data_stats_competition_2025_final(in).csv')
+df = pd.read_csv('data/synthetic_data_stats_competition_2025_final(in).csv')
 df = df.drop(columns=["patient_id"])
-corr_df = pd.read_csv(r'data\df_target_correlation.csv')
+corr_df = pd.read_csv('data/df_target_correlation.csv')
 corr_df['correlation'] = abs(corr_df['correlation'])
 corr_df = corr_df[corr_df['feature_2'] != 'outcome_afib_aflutter_new_post']
-corr_df_cat = pd.read_csv(r'data\cat_correlation_strength.csv')
+corr_df_cat = pd.read_csv('data/cat_correlation_strength.csv')
 
 for col in df.columns:
     unique_vals = df[col].dropna().unique()
